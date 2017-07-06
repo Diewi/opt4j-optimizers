@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Opt4J Core
+Bundle-SymbolicName: org.opt4j.core;singleton:=true
+Bundle-Version: 2.11.0.qualifier
+Bundle-ClassPath: .
+Bundle-Vendor: fortiss GmbH
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Bundle-Activator: org.opt4j.core.Opt4JCoreActivator
+Require-Bundle: org.eclipse.core.runtime;bundle-version="3.9.100";visibility:=reexport,
+ org.eclipse.equinox.registry
+Export-Package: org.opt4j.optimizers,
+ org.opt4j.optimizers.de,
+ org.opt4j.optimizers.ea,
+ org.opt4j.optimizers.mopso,
+ org.opt4j.optimizers.rs,
+ org.opt4j.optimizers.sa
