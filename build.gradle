@@ -2,3 +2,13 @@ dependencies {
 	compile project(':opt4j-core')
 	compile project(':opt4j-operators')
 }
+
+sourceSets {
+    main {
+        java {
+            srcDir 'src'
+            exclude '**/Opt4JOptimizersActivator.java'
+            exclude 'test/**'
+       }
+   }
+}
