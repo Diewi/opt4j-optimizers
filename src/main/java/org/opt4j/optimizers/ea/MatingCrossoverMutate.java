@@ -163,17 +163,13 @@ public class MatingCrossoverMutate implements Mating {
 	 * @return the two offspring individuals
 	 */
 	protected Pair<Individual> mate(Individual parent1, Individual parent2, boolean doCrossover) {
-		Genotype p1 = parent1.getGenotype();
-		Genotype p2 = parent2.getGenotype();
-		Genotype o1, o2;
+		Genotype o1 = copy.copy(parent1.getGenotype());
+		Genotype o2 = copy.copy(parent2.getGenotype());
 
 		if (doCrossover) {
-			Pair<Genotype> offspring = crossover.crossover(p1, p2);
+			Pair<Genotype> offspring = crossover.crossover(o1, o2);
 			o1 = offspring.getFirst();
 			o2 = offspring.getSecond();
-		} else {
-			o1 = copy.copy(p1);
-			o2 = copy.copy(p2);
 		}
 
 		mutate.mutate(o1, mutationRate.get());
